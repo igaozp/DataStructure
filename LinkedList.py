@@ -26,7 +26,7 @@ class LinkedList:
             result += 1
         return result
     
-    def __getitem__(self, index, value):
+    def __getitem__(self, index):
         if index < 0 or index >= len(self):
             return None
         if self.head is None:
