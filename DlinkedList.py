@@ -26,18 +26,26 @@ class DlinkedList:
             q = Node(data)
             p.next = q
             q.prev = p
+            p = q
 
         p.next = self.tail
         self.tail.prev = p
 
     def __len__(self):
-        pass
+        if self.head is None:
+            return 0
+        p = self.head
+        result = 0
+        while p != None:
+            p = p.next
+            result += 1
+        return result
 
     def is_empty(self):
-        pass
+        return self.head == None
 
     def clear(self):
-        pass
+        self.head = None
 
     def insert(self, index, data):
         if data is None:
@@ -56,8 +64,9 @@ class DlinkedList:
             q = Node(data, self.head, None)
             self.head.prev = q
             self.head = q
+            return
 
-        if index == 0:
+        if index == len(self):
             q = Node(data, None, self.tail)
             self.tail.next = q
             self.tail = q
