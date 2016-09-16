@@ -60,18 +60,21 @@ class DlinkedList:
             self.tail = self.head
             return
         
+        # 在头部插入
         if index == 0:
             q = Node(data, self.head, None)
             self.head.prev = q
             self.head = q
             return
 
+        # 在尾部插入
         if index == len(self):
             q = Node(data, None, self.tail)
             self.tail.next = q
             self.tail = q
             return
 
+        # 靠近头部插入
         if index <= len(self) / 2:
             j = 0
             p = self.head
@@ -85,6 +88,7 @@ class DlinkedList:
             p.prev = q
             return
 
+        # 靠近尾部插入
         if index > len(self) / 2:
             j = len(self)
             p = self.tail
@@ -101,16 +105,19 @@ class DlinkedList:
         if index < 0 or index >= len(self):
             return
         
+        # 删除表头
         if index == 0:
             result = self.head.data
             self.head = self.head.next
             return result
 
+        # 删除表尾
         if index == len(self) - 1:
             result = self.tail.data
             self.tail = self.tail.prev
             return result
 
+        # 删除靠近头部的元素
         if index <= len(self) / 2:
             j = 0
             p = self.head
@@ -123,6 +130,7 @@ class DlinkedList:
             p.next.prev = post
             return p.data
 
+        # 删除靠近尾部的元素
         if index > ln(self) / 2:
             j = len(self) - 1
             p = self.tail
