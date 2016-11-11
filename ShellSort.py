@@ -12,7 +12,7 @@ def shellSort(l):
     sublistCount = len(l) / 2
     while sublistCount > 0:
         for pos in range(sublistCount):
-            insertSort(1, pos, sublistCount)
+            insertSort(l, pos, sublistCount)
         sublistCount = sublistCount / 2
 
 
