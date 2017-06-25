@@ -1,24 +1,24 @@
 class Queue:
-    def __init__(self, datas=[]):
+    def __init__(self, data=[]):
         # 使用List存放数据
-        self.datas = datas
+        self.data = data
 
     def __len__(self):
         # 计算队列长度
-        return len(self.datas)
+        return len(self.data)
 
-    def isEmpty(self):
+    def is_empty(self):
         # 判断队列是否为空
         return len(self) == 0
 
     def enqueue(self, data):
         # 入队
-        self.datas.append(data)
+        self.data.append(data)
 
-    def dequeue(self):
+    def de_queue(self):
         # 出队
-        return self.datas.pop(0) if not self.isEmpty else None
+        return self.data.pop(0) if not self.is_empty else None
 
     def peek(self):
         # 检查队首元素
-        return self[0] if not self.isEmpty() else None
+        return self[0] if not self.is_empty() else None

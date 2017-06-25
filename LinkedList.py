@@ -6,7 +6,7 @@ class Node:
 
 class LinkedList:
     def __init__(self, data=None):
-        if data == None:
+        if data is None:
             self.head = None
         else:
             self.head = Node(data[0])
@@ -21,7 +21,7 @@ class LinkedList:
             return 0
         p = self.head
         result = 0
-        while p != None:
+        while p is not None:
             p = p.next
             result += 1
         return result
@@ -51,7 +51,7 @@ class LinkedList:
         p.data = value
 
     def is_empty(self):
-        return self.head == None
+        return self.head is None
 
     def clear(self):
         self.head = None
@@ -95,4 +95,3 @@ class LinkedList:
         result = p.next.data
         p.next = p.next.next
         return result
-    

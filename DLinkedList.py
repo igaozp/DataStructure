@@ -5,24 +5,24 @@ class Node:
         self.prev = prev
 
 
-class DlinkedList:
-    def __init__(self, datas=None):
-        if datas is None:
+class DLinkedList:
+    def __init__(self, data=None):
+        if data is None:
             self.head = None
             self.tail = None
             return
         
-        if len(datas) == 1:
-            node = Node(datas[0])
+        if len(data) == 1:
+            node = Node(data[0])
             self.head = node
             self.tail = self.head
             return
         
-        self.head = Node(datas[0])
-        self.tail = Node(datas[-1])
+        self.head = Node(data[0])
+        self.tail = Node(data[-1])
         p = self.head
 
-        for data in datas[1:-1]:
+        for data in data[1:-1]:
             q = Node(data)
             p.next = q
             q.prev = p
@@ -36,13 +36,13 @@ class DlinkedList:
             return 0
         p = self.head
         result = 0
-        while p != None:
+        while p is not None:
             p = p.next
             result += 1
         return result
 
     def is_empty(self):
-        return self.head == None
+        return self.head is None
 
     def clear(self):
         self.head = None
@@ -101,7 +101,7 @@ class DlinkedList:
             post.prev = q
             p.next = q
 
-    def delete(self):
+    def delete(self, index):
         if index < 0 or index >= len(self):
             return
         
@@ -131,7 +131,7 @@ class DlinkedList:
             return p.data
 
         # 删除靠近尾部的元素
-        if index > ln(self) / 2:
+        if index > len(self) / 2:
             j = len(self) - 1
             p = self.tail
             post = self.tail

@@ -1,33 +1,33 @@
 class Deque:
-    def __init__(self, datas=[]):
-        self.datas = datas
+    def __init__(self, data=[]):
+        self.data = data
 
     def __len__(self):
-        return len(self.datas)
+        return len(self.data)
 
-    def isEmpty(self):
+    def is_empty(self):
         return len(self) == 0
 
-    def enqueue(self, data):
+    def en_queue(self, data):
         # 入队
-        self.datas.append(data)
+        self.data.append(data)
 
-    def dequeue(self):
+    def de_queue(self):
         # 出队
-        return self.datas.pop(0) if not self.isEmpty else None
+        return self.data.pop(0) if not self.is_empty else None
 
-    def enqueueFront(self, data):
+    def enqueue_front(self, data):
         # 头部入队
-        self.datas.insert(0, data)
+        self.data.insert(0, data)
 
-    def dequeueBack(self):
+    def de_queue_back(self):
         # 尾部出队
-        return self.datas.pop() if not self.isEmpty else None
+        return self.data.pop() if not self.is_empty else None
 
-    def peekFront(self):
+    def peek_front(self):
         # 检查队首元素
-        return self[0] if not self.isEmpty else None
+        return self[0] if not self.is_empty else None
 
-    def peekBack(self):
+    def peek_back(self):
         # 检查队尾元素
-        return self[len(self) - 1] if not self.isEmpty else None
+        return self[len(self) - 1] if not self.is_empty else None

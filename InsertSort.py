@@ -1,4 +1,4 @@
-def insertSort(l):
+def insert_sort(l):
     for i in range(1, len(l)):
         temp = l[i]
         j = i
@@ -9,5 +9,5 @@ def insertSort(l):
 
 import random
 a = [random.random() for i in range(40)]
-insertSort(a)
+insert_sort(a)
 print(a)
