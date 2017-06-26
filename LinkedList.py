@@ -6,6 +6,7 @@ class Node:
 
 class LinkedList:
     def __init__(self, data=None):
+        # 链表初始化
         if data is None:
             self.head = None
         else:

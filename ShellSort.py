@@ -1,3 +1,6 @@
+import random
+
+
 def insert_sort(l, start, gap):
     for i in range(start + gap, len(l), gap):
         current_value = l[i]
@@ -14,9 +17,6 @@ def shell_sort(l):
         for pos in range(sublist_count):
             insert_sort(l, pos, sublist_count)
         sublist_count = sublist_count / 2
-
-
-import random
 
 a = [random.random() for i in range(40)]
 print(a)

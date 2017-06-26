@@ -1,4 +1,5 @@
 class Deque:
+    # 双向队列
     def __init__(self, data=[]):
         self.data = data
 
@@ -16,7 +17,7 @@ class Deque:
         # 出队
         return self.data.pop(0) if not self.is_empty else None
 
-    def enqueue_front(self, data):
+    def en_queue_front(self, data):
         # 头部入队
         self.data.insert(0, data)
 
